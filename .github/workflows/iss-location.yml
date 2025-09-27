@@ -15,14 +15,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Python and dependencies
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.12
 
-      - name: 23f2003213@ds.study.iitm.ac.in
+      - name: Install dependencies
         run: |
-          echo "Hello, world!"
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: 23f2003213@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
 
       - name: Fetch ISS location data
         run: |
